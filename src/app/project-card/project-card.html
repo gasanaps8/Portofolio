@@ -1,0 +1,42 @@
+<div
+  class="card project-card"
+  [class.expanded]="expanded"
+  (click)="toggleExpand()"
+>
+  <div class="card-preview">
+    <div class="text-preview">
+      <h3 class="card-title">{{ project.title }}</h3>
+
+      @if (project.shortDescription) {
+        <p class="description">{{ project.shortDescription }}</p>
+      }
+    </div>
+
+    @if (displayedImages.length) {
+      <div class="image-container">
+        @for (image of displayedImages; track image; let i = $index) {
+          <img
+            [src]="image"
+            [alt]="project.title + ' image ' + i"
+            class="project-image"
+            [class.visible]="i === currentImageIndex"
+          />
+        }
+      </div>
+    }
+  </div>
+
+  <div class="card-details">
+    @if (project.fullDescription) {
+      <p class="description">{{ project.fullDescription }}</p>
+    }
+
+    @if (project.technologies.length) {
+      <ul class="tech-list">
+        @for (tech of project.technologies; track tech) {
+          <app-tag [label]="tech" color="secondary" ></app-tag>
+        }
+      </ul>
+    }
+  </div>
+</div>

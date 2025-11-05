@@ -1,0 +1,13 @@
+<section>
+  <h1>{{ title }}</h1>
+  <div>
+    @if(text){
+        <p>{{ text }}</p>
+    }
+    
+    @if(imageSrc) {
+      <img [src]="imageSrc" class="section-image">
+    }
+  </div>
+  <ng-content></ng-content>
+</section>

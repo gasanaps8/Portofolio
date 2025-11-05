@@ -1,0 +1,53 @@
+:host {
+    border-radius: 8px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    cursor: default;
+    border: 1px solid var(--cards-border);
+    font-weight: bold;
+    font-family: var(--font-body);
+}
+
+:host(.primary) {
+    background: var(--cards-bg);
+    color: var(--cards-text)
+}
+
+:host(.secondary){
+    background: var(--cards-text);
+    color: var(--cards-bg);
+}
+
+:host(.small) {
+    font-size: 0.8rem;
+    padding: 4px 10px;
+}
+
+:host(.large) {
+    font-size: 1rem;
+    padding: 6px 14px;
+}
+
+:host(:hover) {
+    transform: translateY(-2px);
+    filter: brightness(1.1);
+}
+
+:host(.primary:hover) {
+    background: var(--cards-text);
+    color: var(--cards-bg);
+}
+
+:host(.secondary:hover) {
+    background: var(--cards-bg);
+    color: var(--cards-text);
+}
+
+:host-context(.card:hover).primary {
+    background: var(--cards-text);
+    color: var(--cards-bg);
+}
+
+:host-context(.card:hover).secondary {
+    background: var(--cards-bg);
+    color: var(--cards-text);
+}

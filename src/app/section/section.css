@@ -1,0 +1,54 @@
+section {
+    max-width: 1000px;
+    width: 95%;
+    margin: 2rem auto;
+    padding: 1.5rem 2rem;
+    background-color: var(--section-bg);
+    border-radius: 12px;
+    box-shadow: 0 4px 8px var(--section-border-color);
+    box-sizing: border-box;
+    transition: all 0.6s ease;
+}
+
+section:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px var(--section-border-color);
+}
+
+section h1{
+    color: var(--section-title);
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    font-family: var(--font-heading);
+}
+
+h1::before{
+    content: "";
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    background-color: var(--section-title);
+    margin: 5px 10px;
+}
+
+section div {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+    font-family: var(--font-body);
+    margin: 0px 20px
+}
+
+section p {
+    flex: 1;
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: var(--section-title)
+}
+
+.section-image{
+    height: 100px;
+    border-radius: 8px;
+    margin-right: 4px;
+}

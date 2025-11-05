@@ -1,0 +1,49 @@
+<app-navbar></app-navbar>
+<router-outlet>
+  <app-section
+    id="about"
+    title="About"
+    text="Web Developer Júnior com experiência em Laravel e Livewire, focado em construir interfaces acessíveis e componentes performantes. Colaborei em equipas multidisciplinares, integrando front-end e back-end e aplicando boas práticas de usabilidade. Motivado por aprender rapidamente e contribuir para produtos escaláveis."
+    imageSrc="/perfil.jpg">
+  </app-section>
+
+  <app-section id="experience" title="Experience">
+    <div class="experiences-container">
+      @for (experience of experiences; track $index) {
+        <app-experience-card [experienceInfo]="experience"></app-experience-card>
+      }
+    </div>
+  </app-section>
+
+  <app-section
+    id="projects"
+    title="Projects">
+    <div class="projects-container">
+      @for (project of projects; track project) {
+        <app-project-card [project]="project"></app-project-card>
+    }
+    </div>
+  </app-section>
+
+  <app-section
+    id="skills"
+    title="Skills">
+    <div class="skills-container">
+      @for (skill of skills; track skill) {
+      <app-tag [label]="skill" size="large"></app-tag>
+    }
+    </div>
+  </app-section>
+
+  <app-section 
+    id="extra-curricular"
+    title="Extracurricular activities">
+    <div class="skills-container">
+      @for (extra of extraCurriculars; track extra) {
+        <app-tag [label]="extra" size="large"></app-tag>
+      }
+    </div>
+  </app-section>
+<router-outlet />
+
+<app-footer></app-footer>

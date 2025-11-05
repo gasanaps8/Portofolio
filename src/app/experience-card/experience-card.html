@@ -1,0 +1,28 @@
+<div 
+  class="card experience-card" 
+  [class.expanded]="expanded" 
+  (click)="toggleExpand()">
+  <div class="card-preview">
+    <div class="text-preview">
+      <h3 class="card-title">{{ experienceInfo.title }}</h3>
+      <h4 class="description">{{ experienceInfo.company }}</h4>
+    </div>
+  </div>
+
+  <div class="card-details">
+    @if (experienceInfo.location) {
+      <p class="location">{{ experienceInfo.location }}</p>
+    }
+    <p class="period">{{ experienceInfo.period }}</p>
+    <p class="description">{{ experienceInfo.description }}</p>
+
+    @if (experienceInfo.technologies.length) {
+      <ul class="tech-list">
+        @for (tech of experienceInfo.technologies; track $index) {
+          <app-tag [label]="tech" size="small" color="secondary"></app-tag>
+        }
+      </ul>
+    }
+  </div>
+</div>
+

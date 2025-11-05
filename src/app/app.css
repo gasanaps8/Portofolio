@@ -1,0 +1,28 @@
+.experiences-container{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    padding: 20px 0;
+}
+
+.projects-container{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    padding: 20px 0;
+}
+
+.skills-container{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    padding: 20px 0;
+}
+
+span{
+    font-weight: bold;
+}
