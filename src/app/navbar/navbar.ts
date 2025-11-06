@@ -13,11 +13,12 @@ export class NavbarComponent implements OnInit, AfterViewInit {
   sections: string[] = ['about', 'experience', 'projects', 'skills', 'contact'];
   offsetvalue: number = 40;
 
+  menuOpen = false;
+
   constructor(@Inject(PLATFORM_ID) private platformId: Object) {}
 
   ngOnInit() {
     if (isPlatformBrowser(this.platformId)) {
-      // Set initial active link from URL hash
       const hash = window.location.hash.replace('#', '');
       this.activeLink = hash || 'about';
     }
@@ -30,7 +31,7 @@ export class NavbarComponent implements OnInit, AfterViewInit {
   }
 
   setActive(event: Event, link: string) {
-    event.preventDefault(); // prevent default anchor jump
+    event.preventDefault();
     this.activeLink = link;
 
     if (isPlatformBrowser(this.platformId)) {
@@ -45,12 +46,10 @@ export class NavbarComponent implements OnInit, AfterViewInit {
         const elementPosition = element.offsetTop - offset;
         window.scrollTo({ top: elementPosition, behavior: 'smooth' });
 
-        // Update the URL hash without jumping
         history.replaceState(null, '', `#${link}`);
       }
     }
   }
-
 
   onScroll() {
     const navbar = document.querySelector('.navbar') as HTMLElement;
@@ -75,4 +74,9 @@ export class NavbarComponent implements OnInit, AfterViewInit {
       }
     }
   }
+
+  toggleMenu() {
+    this.menuOpen = !this.menuOpen;
+  }
+
 }

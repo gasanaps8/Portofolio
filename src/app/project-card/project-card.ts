@@ -23,7 +23,7 @@ export class ProjectCard implements OnInit, OnDestroy {
     this.displayedImages =
       this.project.imageUrls && this.project.imageUrls.length > 0
         ? [...this.project.imageUrls]
-        : ['/noise.jpg'];
+        : ['noise.jpg'];
 
     console.log(`[${this.project.title}] Initialized images:`, this.displayedImages);
 

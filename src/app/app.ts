@@ -18,7 +18,6 @@ import { Project } from './Models/project';
 })
 
 export class App {
-  // protected readonly title = signal('Portofolio');
   experiences: Experience[] = [
     new Experience(
       'Web Developer Intern',

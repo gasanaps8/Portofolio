@@ -11,7 +11,6 @@ export class TagComponent {
   @Input() size: 'small' | 'large' = 'small';
   @Input() color: 'primary' | 'secondary' = 'primary';
 
-  // Optional: apply dynamic CSS classes directly on host
   @HostBinding('class')
   get hostClasses(): string {
     return `tag ${this.size} ${this.color}`;

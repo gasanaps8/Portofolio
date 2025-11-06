@@ -1,15 +1,15 @@
 .navbar { 
-    display: flex; 
-    align-items: center; 
-    justify-content: center; 
-    background-color: var(--navbar-bg); 
-    color: var(--navbar-text); 
-    width: 100%;
-    top: 0; 
-    left: 0; 
-    position: fixed; 
-    z-index: 1000; 
-    font-family: var(--font-heading);
+  display: flex; 
+  align-items: center; 
+  justify-content: center; 
+  background-color: var(--navbar-bg); 
+  color: var(--navbar-text); 
+  width: 100%;
+  top: 0; 
+  left: 0; 
+  position: fixed; 
+  z-index: 1000; 
+  font-family: var(--font-heading);
 }
 
 .nav-content {
@@ -21,29 +21,99 @@
   padding: 2rem;
 }
 
+.logo {
+  font-size: 1.5rem;
+  font-weight: 700;
+  display: none;
+}
+
 .nav-links {
-    list-style: none;
-    display: flex;
-    gap: 1.5rem;
-    padding: 0;
-    margin: 0;
+  list-style: none;
+  display: flex;
+  gap: 1.5rem;
+  padding: 0;
+  margin: 0;
+  transition: all 0.3s ease;
 }
 
 .nav-links a {
-    color: var(--navbar-text);
-    text-decoration: none;
-    font-weight: 1000;
-    font-size: 1.5rem;
-    padding: 0.5rem 1rem;
-    border-radius: 8px;
-    transition: background-color 0.3s, color 0.3s;
+  color: var(--navbar-text);
+  text-decoration: none;
+  font-weight: 1000;
+  font-size: 1.2rem;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  transition: background-color 0.3s, color 0.3s;
 }
 
 .nav-links a:hover {
-    text-decoration: underline;
+  text-decoration: underline;
 }
 
 .nav-links a.active {
-    background-color: var(--navbar-text);
-    color: var(--navbar-bg);
+  background-color: var(--navbar-text);
+  color: var(--navbar-bg);
+}
+
+.burger {
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 28px;
+  height: 20px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  z-index: 1100;
+}
+
+.burger span {
+  display: block;
+  height: 3px;
+  width: 100%;
+  background: var(--navbar-text);
+  border-radius: 2px;
+  transition: all 0.3s ease;
+}
+
+@media (max-width: 900px) {
+  .burger {
+    display: flex;
+  }
+
+  .logo {
+    display: block;
+  }
+
+  .nav-content{
+    justify-content: space-between;
+  }
+
+  .nav-links {
+    position: absolute;
+    top: 100%;
+    border-bottom: 10px solid  var(--navbar-bg);
+    right: 0;
+    background-color: var(--navbar-bg);
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+    max-height: 0;
+    overflow: hidden;
+    gap: 0;
+  }
+
+  .nav-links.active {
+    max-height: 500px;
+  }
+
+  .nav-links li {
+    width: 100%;
+    text-align: center;
+  }
+
+  .nav-links a {
+    display: block;
+    width: 100%;
+  }
 }
