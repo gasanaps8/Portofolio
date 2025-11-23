@@ -19,6 +19,10 @@
   --cards-text: var(--text-light);
   --cards-border: var(--accent-warm);
 
+  --footer-bg: var(--primary-color);
+  --footer-text: var(--text-light);
+  --footer-accent: var(--accent-color);
+
   --hover-bg: var(--accent-color);
   --hover-text: var(--text-dark);
 
@@ -29,7 +33,7 @@
 body {
   margin: 0;
   position: relative;
-  padding-top: 100px; 
+  padding-top: 0px; 
 }
 
 html {

@@ -1,4 +1,4 @@
-import { Component, OnInit, Inject, PLATFORM_ID, AfterViewInit } from '@angular/core';
+import { Component, Inject, PLATFORM_ID, AfterViewInit } from '@angular/core';
 import { isPlatformBrowser } from '@angular/common';
 
 @Component({
@@ -8,21 +8,15 @@ import { isPlatformBrowser } from '@angular/common';
   templateUrl: './navbar.html',
   styleUrls: ['./navbar.css']
 })
-export class NavbarComponent implements OnInit, AfterViewInit {
-  activeLink: string = 'about';
-  sections: string[] = ['about', 'experience', 'projects', 'skills', 'contact'];
+export class NavbarComponent implements AfterViewInit {
+  activeLink: string = '';
+  sections: string[] = [' ', 'about', 'experience', 'projects', 'skills', 'extra', 'contact'];
   offsetvalue: number = 40;
+  scrolled = false;
 
   menuOpen = false;
 
   constructor(@Inject(PLATFORM_ID) private platformId: Object) {}
-
-  ngOnInit() {
-    if (isPlatformBrowser(this.platformId)) {
-      const hash = window.location.hash.replace('#', '');
-      this.activeLink = hash || 'about';
-    }
-  }
 
   ngAfterViewInit() {
     if (isPlatformBrowser(this.platformId)) {
@@ -34,27 +28,39 @@ export class NavbarComponent implements OnInit, AfterViewInit {
     event.preventDefault();
     this.activeLink = link;
 
+    // Close burger menu after clicking
+    if (this.menuOpen) {
+      this.menuOpen = false;
+    }
+
     if (isPlatformBrowser(this.platformId)) {
       const element = document.getElementById(link);
       const navbar = document.querySelector('.navbar') as HTMLElement;
       const navbarHeight = navbar ? navbar.offsetHeight : 0;
-
       const offset = navbarHeight + this.offsetvalue;
-      console.log('Navbar height + extra offset:', offset);
 
       if (element) {
         const elementPosition = element.offsetTop - offset;
         window.scrollTo({ top: elementPosition, behavior: 'smooth' });
-
         history.replaceState(null, '', `#${link}`);
       }
     }
   }
 
   onScroll() {
+    this.scrolled = window.scrollY > 0;
+
     const navbar = document.querySelector('.navbar') as HTMLElement;
     const navbarHeight = navbar ? navbar.offsetHeight : 0;
     const offset = navbarHeight + this.offsetvalue;
+
+    if (window.scrollY < window.innerHeight * 0.7) {
+      if (this.activeLink !== '') {
+        this.activeLink = '';
+        history.replaceState(null, '', ' ');
+      }
+      return;
+    }
 
     const scrollPosition = window.scrollY + offset + 1;
 
@@ -78,5 +84,4 @@ export class NavbarComponent implements OnInit, AfterViewInit {
   toggleMenu() {
     this.menuOpen = !this.menuOpen;
   }
-
 }

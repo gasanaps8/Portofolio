@@ -2,7 +2,7 @@
   display: flex; 
   align-items: center; 
   justify-content: center; 
-  background-color: var(--navbar-bg); 
+  background-color: transparent; 
   color: var(--navbar-text); 
   width: 100%;
   top: 0; 
@@ -10,6 +10,11 @@
   position: fixed; 
   z-index: 1000; 
   font-family: var(--font-heading);
+  transition: background-color 0.6s ease-in-out, backdrop-filter 0.6s ease-in-out;
+}
+
+.navbar.scrolled {
+  background-color: var(--navbar-bg);
 }
 
 .nav-content {
@@ -92,7 +97,7 @@
   .nav-links {
     position: absolute;
     top: 100%;
-    border-bottom: 10px solid  var(--navbar-bg);
+
     right: 0;
     background-color: var(--navbar-bg);
     flex-direction: column;
@@ -105,6 +110,7 @@
 
   .nav-links.active {
     max-height: 500px;
+    border-bottom: 10px solid  var(--navbar-bg);
   }
 
   .nav-links li {

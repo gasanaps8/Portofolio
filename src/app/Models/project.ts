@@ -5,5 +5,6 @@ export class Project {
     public fullDescription: string,
     public imageUrls: string[],
     public technologies: string[],
+    public websiteUrl?: string,
   ) {}
 }

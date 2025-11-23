@@ -9,10 +9,11 @@ import { TagComponent } from './tag/tag';
 import { FooterComponent } from './footer/footer';
 import { ProjectCard } from './project-card/project-card';
 import { Project } from './Models/project';
+import { LandingSectionComponent } from './landing-section/landing-section';
  
 @Component({
   selector: 'app-root',
-  imports: [CommonModule, RouterOutlet, NavbarComponent, SectionComponent, ExperienceCard, TagComponent, FooterComponent, ProjectCard],
+  imports: [CommonModule, LandingSectionComponent, RouterOutlet, NavbarComponent, SectionComponent, ExperienceCard, TagComponent, FooterComponent, ProjectCard],
   templateUrl: './app.html',
   styleUrl: './app.css'
 })
@@ -52,6 +53,21 @@ export class App {
       'This upcoming project will bring exciting new features and technologies. Keep an eye out for updates 👀',
       ['coming-soon.png'],
       ['Loading...', 'Secrets 🤫']
+    ),
+    new Project(
+      'CCR WebSite',
+      'A modern website for CCR São Caetano built with React.',
+      'This project is a fully responsive website developed for the Centro Cultural e Recreativo de São Caetano. It was built using React, React Router, and Vite, featuring a clean layout, dynamic news pages, custom components, and reusable UI sections like the navbar, footer, and image zoom. The website emphasizes performance, accessibility ensuring a consistent experience across all devices.',
+      ['siteCCR1.png', 'siteCCR2.png', 'siteCCR3.png'],
+      ['React', 'HTML', 'CSS', 'Vite'],
+      'https://ccrsaocaetano.pages.dev'
+    ),
+    new Project(
+      'Expenses Tracker',
+      'A personal project built to explore Firebase and real-time data handling.',
+      'This expenses tracker allows users to manage their spending with an intuitive UI, Firebase authentication, Firestore database storage, and visual analytics powered by Chart.js. Built with React and Vite, it includes responsive layouts, dynamic charts, and smooth user interactions designed to make tracking expenses simple and clear.',
+      ['expenseTracker1.png', 'expenseTracker2.png', 'expenseTracker3.png'],
+      ['React', 'Vite', 'CSS', 'Firebase', 'Chart.js']
     ),
     new Project(
       'Angular Portfolio',

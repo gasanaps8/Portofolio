@@ -38,5 +38,13 @@
         }
       </ul>
     }
+
+    @if (project.websiteUrl) {
+      <div class="project-link">
+        <a [href]="project.websiteUrl" target="_blank" rel="noopener noreferrer">
+          Visit Project
+        </a>
+      </div>
+    }
   </div>
 </div>
