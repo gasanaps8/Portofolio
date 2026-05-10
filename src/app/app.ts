@@ -21,10 +21,18 @@ import { LandingSectionComponent } from './landing-section/landing-section';
 export class App {
   experiences: Experience[] = [
     new Experience(
+      'IT Intern',
+      'Celbi, Altri Group',
+      'Feb 2026 – Feb 2027',
+      'Developed Power BI dashboards and reports using data integrated from Microsoft Fabric, OneLake, and SharePoint. Built an IPAM solution using .NET and explored SAP BTP and SAP Build Apps for enterprise application development. Also developed a “Gestão por Objetivos” management application with goal creation, associated task management, and performance evaluation features.',
+      ['Power BI', 'Microsoft Fabric', 'OneLake', 'Power Apps', 'SAP Build Apps', 'SAP BTP', '.NET', 'SharePoint'],
+      'Praia da Leirosa, Coimbra, Portugal'
+    ),
+    new Experience(
       'Web Developer Intern',
       'OneSource',
       'Feb 2025 – Jul 2025',
-      'Developed and maintained web applications using Laravel and Livewire, integrating front-end and back-end components with a strong focus on usability and accessibility. Collaborated with a multidisciplinary team to ensure functional and scalable solutions.',
+      'Developed and maintained web applications using Laravel and Livewire, integrating front-end and back-end components with a strong focus on usability and accessibility. Integrated some external components as accessebility widget and and chatbots. Collaborated with a multidisciplinary team to ensure functional and scalable solutions.',
       ['PHP', 'Laravel', 'Livewire', 'HTML', 'CSS', 'Git'],
       'Coimbra, Portugal'
     ),
@@ -100,7 +108,7 @@ export class App {
   ];
   
   extraCurriculars: string[] = [
-    'Comissão de festas em honra de São Caetano | 2025-Presente',
+    'Comissão de festas em honra de São Caetano | 2025-2026',
     'Voluntariado Expofacic | 2023-2025',
     'Equipa da Direção do CCR | 2023-Presente',
     'Grupo de jovens de S.Caetano | 2021-Presente',

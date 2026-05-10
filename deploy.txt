@@ -1,2 +1,5 @@
 ng build --configuration production --base-href /Portofolio/
 npx gh-pages -d dist/portofolio/browser
+
+
+for dev: to run command - ng serve
