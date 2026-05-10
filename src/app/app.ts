@@ -63,6 +63,14 @@ export class App {
       ['Loading...', 'Secrets 🤫']
     ),
     new Project(
+      'Weather App',
+      'A modern weather application built with Angular.',
+      'This project is a responsive weather application developed using Angular. It allows users to search for real-time weather data by city, displaying detailed information such as temperature, humidity, wind speed, and weather conditions. The app integrates with a weather API to fetch live data and features reusable components, a clean UI, and a responsive design optimized for both desktop and mobile devices.',
+      ['weatherapp1.png', 'weatherapp2.png', 'weatherapp3.png', 'weatherapp4.png', 'weatherapp5.png'],
+      ['Angular', 'TypeScript', 'HTML', 'CSS', 'API'],
+      'https://weather-app-eight-peach-94.vercel.app/'
+    ),
+    new Project(
       'CCR WebSite',
       'A modern website for CCR São Caetano built with React.',
       'This project is a fully responsive website developed for the Centro Cultural e Recreativo de São Caetano. It was built using React, React Router, and Vite, featuring a clean layout, dynamic news pages, custom components, and reusable UI sections like the navbar, footer, and image zoom. The website emphasizes performance, accessibility ensuring a consistent experience across all devices.',
@@ -104,7 +112,18 @@ export class App {
     'Chatbots',
     'Teamwork',
     'First Aid',
-    'Attention to Detail'
+    'Attention to Detail',
+    'React',
+    'Firebase',
+    'Chart.js',
+    'Vite',
+    'Microsoft Fabric',
+    'OneLake',
+    'Power Apps',
+    'SAP Build Apps',
+    'SAP BTP',
+    '.NET',
+    'SharePoint'
   ];
   
   extraCurriculars: string[] = [
