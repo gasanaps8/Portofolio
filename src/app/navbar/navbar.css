@@ -81,7 +81,7 @@
   transition: all 0.3s ease;
 }
 
-@media (max-width: 900px) {
+@media (max-width: 1000px) {
   .burger {
     display: flex;
   }

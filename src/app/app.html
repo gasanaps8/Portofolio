@@ -12,6 +12,18 @@
     imageSrc="perfil.jpg">
   </app-section>
 
+  <app-section
+    id="education"
+    title="Education">
+    <div class="education-container">
+      @for (education of educationList; track $index) {
+        <app-education-card
+          [educationInfo]="education"
+        ></app-education-card>
+      }
+    </div>
+  </app-section>
+
   <app-section id="experience" title="Experience">
     <div class="experiences-container">
       @for (experience of experiences; track $index) {

@@ -1,0 +1,26 @@
+<div 
+  class="card experience-card" 
+  [class.expanded]="expanded" 
+  (click)="toggleExpand()">
+  <div class="card-preview">
+    <div class="text-preview">
+      <h3 class="card-title">{{ educationInfo.title }}</h3>
+      <h4 class="description">{{ educationInfo.school }}</h4>
+    </div>
+  </div>
+
+  <div class="card-details">
+    
+    <p class="period">{{ educationInfo.period }}</p>
+    <p class="description">{{ educationInfo.description }}</p>
+
+    @if (educationInfo.classes.length) {
+      <ul class="tech-list">
+        @for (class of educationInfo.classes; track $index) {
+          <app-tag [label]="class" size="small" color="secondary"></app-tag>
+        }
+      </ul>
+    }
+  </div>
+</div>
+

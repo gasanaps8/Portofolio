@@ -10,15 +10,60 @@ import { FooterComponent } from './footer/footer';
 import { ProjectCard } from './project-card/project-card';
 import { Project } from './Models/project';
 import { LandingSectionComponent } from './landing-section/landing-section';
+import { EducationCard } from "./education-card/education-card";
+import { Education } from './Models/education';
  
 @Component({
   selector: 'app-root',
-  imports: [CommonModule, LandingSectionComponent, RouterOutlet, NavbarComponent, SectionComponent, ExperienceCard, TagComponent, FooterComponent, ProjectCard],
+  imports: [CommonModule, LandingSectionComponent, RouterOutlet, NavbarComponent, SectionComponent, ExperienceCard, TagComponent, FooterComponent, ProjectCard, EducationCard],
   templateUrl: './app.html',
   styleUrl: './app.css'
 })
 
 export class App {
+  educationList: Education[] = [
+    {
+      title: 'Bachelor in Computer Engineering – Applications Development',
+      school: 'Instituto Superior de Engenharia de Coimbra',
+      period: '2022 - 2025',
+      description:
+        'Completed a Computer Engineering degree with specialization in Applications Development, focusing on software engineering, web and mobile development, distributed systems, databases, operating systems, artificial intelligence, and scalable application design. Developed practical experience through academic and collaborative projects involving full-stack development, object-oriented programming, human-computer interaction, and software project management.',
+      classes: [
+        'Advanced Programming',
+        'Base de Dados',
+        'Calculus I',
+        'Calculus II',
+        'Computer Architecture and Technology',
+        'Data Structures',
+        'Digital Systems',
+        'Distributed Programming',
+        'Electronics',
+        'Ethics and Deontology',
+        'Fundamentals of Computer Graphics',
+        'Human Computer Interaction',
+        'Introduction to Artificial Intelligence',
+        'Introduction to Data Networks',
+        'Introduction to Programming',
+        'Knowledge And Reasoning',
+        'Linear Algebra',
+        'Management',
+        'Mobile Architectures',
+        'Modeling and Design',
+        'Object Oriented Programming',
+        'Operating Systems II',
+        'Operations Research',
+        'Operative Systems',
+        'Programming',
+        'Project or Traineeship',
+        'Script Languages',
+        'Software Project Management',
+        'Statistical Methods',
+        'WEB Programming',
+        'WEB Technologies'
+      ]
+    }
+  ];
+
   experiences: Experience[] = [
     new Experience(
       'IT Intern',

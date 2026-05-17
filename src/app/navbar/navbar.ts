@@ -10,7 +10,7 @@ import { isPlatformBrowser } from '@angular/common';
 })
 export class NavbarComponent implements AfterViewInit {
   activeLink: string = '';
-  sections: string[] = [' ', 'about', 'experience', 'projects', 'skills', 'extra', 'contact'];
+  sections: string[] = [' ', 'about','education', 'experience', 'projects', 'skills', 'extra', 'contact'];
   offsetvalue: number = 40;
   scrolled = false;
 
